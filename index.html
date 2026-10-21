@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
@@ -36,7 +39,7 @@ a{color:#0B0B0F;text-decoration:none}a:hover{color:#7C5CFF}
 </div>
 <header style="position:fixed;top:0;left:0;right:0;z-index:80;padding:{{ navPad }};transition:padding 600ms cubic-bezier(0.16,1,0.3,1);pointer-events:none">
   <nav aria-label="Navigation principale" style="pointer-events:auto;margin:0 auto;max-width:{{ navMax }};display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 22px;border-radius:{{ navRadius }};background:{{ navBg }};backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid {{ navBorder }};box-shadow:{{ navShadow }};transition:max-width 700ms cubic-bezier(0.16,1,0.3,1),border-radius 700ms cubic-bezier(0.16,1,0.3,1),background 400ms,box-shadow 400ms,border-color 400ms">
-    <a href="#top" style="font:700 17px/1 Sora,sans-serif;letter-spacing:-0.03em;white-space:nowrap">Caleb D.<span style="color:#7C5CFF">D</span></a>
+    <a href="#top" style="font:700 17px/1 Sora,sans-serif;letter-spacing:-0.03em;white-space:nowrap;display:inline-flex;align-items:center"><img src="assets/logo-caleb.png" alt="" width="26" height="26" style="width:26px;height:26px;vertical-align:middle;margin-right:8px;display:inline-block">Caleb D.<span style="color:#7C5CFF">D</span></a>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex;gap:2px;font-size:14px;font-weight:500">
         <a href="#projets" style="padding:10px 12px;color:#52525B">Projets</a>
@@ -1296,7 +1299,7 @@ a{color:#0B0B0F;text-decoration:none}a:hover{color:#7C5CFF}
 <footer>
   <div style="max-width:1440px;margin:0 auto;padding:72px clamp(24px,4.5vw,64px) 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:40px">
     <div style="display:flex;flex-direction:column;gap:16px">
-      <span style="font:700 24px/1 Sora,sans-serif;letter-spacing:-0.03em">Caleb D.<span style="color:#7C5CFF">D</span></span>
+      <span style="font:700 24px/1 Sora,sans-serif;letter-spacing:-0.03em"><img src="assets/logo-caleb.png" alt="" width="34" height="34" style="width:34px;height:34px;vertical-align:middle;margin-right:8px;display:inline-block">Caleb D.<span style="color:#7C5CFF">D</span></span>
       <span style="font-size:15px;line-height:1.6;color:#52525B;max-width:28ch">De la maquette au modèle. Apps IA utiles, conçues et livrées.</span>
     </div>
     <div style="display:grid;gap:12px;align-content:start;font-size:15px"><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B;margin-bottom:6px">NAVIGATION</span><a href="#projets">Projets</a><a href="#services">Services</a><a href="#lab">Lab</a><a href="#blog">Blog</a><a href="#a-propos">À propos</a></div>
