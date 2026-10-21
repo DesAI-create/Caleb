@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#07070A;color:#F4F4F5;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#F4F4F5;text-decoration:none}a:hover{color:#C6FF3D}
+::selection{background:#C6FF3D;color:#07070A}
+:focus-visible{outline:2px solid #C6FF3D;outline-offset:3px}
+@media (pointer:fine){body.cc-on,body.cc-on *{cursor:none!important}}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;overflow-x:clip">
+
+<sc-if value="{{ grain }}" hint-placeholder-val="{{ true }}">
+  <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:90;opacity:0.03;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+</sc-if>
+
+<div data-cc="dot" aria-hidden="true" style="position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:999px;background:#C6FF3D;pointer-events:none;z-index:100;opacity:0"></div>
+<div data-cc="ring" aria-hidden="true" style="position:fixed;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:999px;border:1px solid rgba(244,244,245,0.4);pointer-events:none;z-index:100;opacity:0;display:flex;align-items:center;justify-content:center;transition:width 300ms cubic-bezier(0.16,1,0.3,1),height 300ms cubic-bezier(0.16,1,0.3,1),margin 300ms cubic-bezier(0.16,1,0.3,1),background 300ms,border-color 300ms"><span data-cc="label" style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#07070A;opacity:0;transition:opacity 200ms">VOIR</span></div>
+
+<nav aria-label="Navigation principale" style="position:fixed;top:20px;left:50%;transform:translate(-50%, {{ navY }});transition:transform 600ms cubic-bezier(0.16,1,0.3,1);z-index:80;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 20px;border-radius:999px;background:rgba(15,15,20,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);white-space:nowrap;max-width:calc(100vw - 32px)">
+  <a href="#top" style="font:700 15px/1 Sora,sans-serif;letter-spacing:-0.02em;margin-right:14px">CDD<span style="color:#C6FF3D">.</span></a>
+  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;gap:2px;font-size:14px">
+      <a href="#" style="padding:10px 12px;color:#A1A1AA">Projets</a>
+      <a href="#" style="padding:10px 12px;color:#A1A1AA">Services</a>
+      <a href="#" style="padding:10px 12px;color:#A1A1AA">Lab</a>
+      <a href="#" style="padding:10px 12px;color:#A1A1AA">Blog</a>
+      <a href="#" style="padding:10px 12px;color:#A1A1AA">À propos</a>
+      <a href="#" style="padding:10px 12px;color:#F4F4F5;font:500 12px/16px 'JetBrains Mono',monospace;letter-spacing:0.08em">CV ↓</a>
+    </div>
+  </sc-if>
+  <a href="#" style="display:flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;background:#C6FF3D;color:#07070A;font:600 14px/1 Inter,sans-serif;margin-left:6px">Demander un devis <span aria-hidden="true">→</span></a>
+</nav>
+
+<header id="top" style="max-width:1440px;margin:0 auto;padding:clamp(140px,18vw,240px) clamp(24px,4.5vw,64px) clamp(96px,11vw,160px);position:relative">
+  <div aria-hidden="true" style="position:absolute;right:-10%;top:10%;width:min(60vw,760px);aspect-ratio:1;border-radius:999px;background:radial-gradient(circle at 40% 40%,rgba(124,92,255,0.35),rgba(61,220,255,0.12) 45%,transparent 70%);filter:blur(40px);pointer-events:none"></div>
+  <div style="display:flex;align-items:center;gap:10px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA;margin-bottom:40px;position:relative">
+    <span data-pulse="" style="width:6px;height:6px;border-radius:999px;background:#C6FF3D;box-shadow:0 0 12px #C6FF3D"></span>DESIGN SYSTEM — V1.0 — 2026
+  </div>
+  <h1 data-reveal="" style="margin:0;font:700 clamp(64px,11vw,160px)/0.95 Sora,sans-serif;letter-spacing:-0.04em;position:relative">
+    <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.1em"><span data-w="" style="display:inline-block">Design</span></span>
+    <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.1em"><span data-w="" style="display:inline-block;color:#52525B">×</span></span><br>
+    <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.1em"><span data-w="" data-irid="" style="display:inline-block;background:linear-gradient(90deg,#7C5CFF,#3DDCFF,#7C5CFF);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent">Intelligence</span></span>
+  </h1>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:48px;margin-top:72px;position:relative">
+    <p style="margin:0;font-size:18px;line-height:1.6;color:#A1A1AA;max-width:52ch;text-wrap:pretty">Le système visuel du portfolio de <span style="color:#F4F4F5">Caleb Deroux Desailly, AI Product Designer</span>. Chaque élément met en scène le passage de la forme — grilles, typo — à l'intelligence — réseaux, données, particules.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 32px;align-content:start;white-space:nowrap;font:400 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">
+      <span>01 COULEURS</span><span>02 TYPOGRAPHIE</span><span>03 GRILLE</span>
+      <span>04 COMPOSANTS</span><span>05 MOTION</span><span>06 ACCESSIBILITÉ</span>
+    </div>
+  </div>
+</header>
+
+<main style="max-width:1440px;margin:0 auto;padding:0 clamp(24px,4.5vw,64px)">
+
+<section id="couleurs" style="padding:clamp(96px,12vw,200px) 0;border-top:1px solid rgba(255,255,255,0.08)">
+  <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:24px">01 — COULEURS</div>
+  <h2 data-reveal="" style="margin:0 0 64px;font:600 clamp(40px,5.5vw,72px)/0.95 Sora,sans-serif;letter-spacing:-0.04em;max-width:14ch">
+    <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">Le</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">noir</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">comme</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">scène,</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">la</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block;color:#C6FF3D">lumière</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">comme</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">signal.</span></span>
+  </h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-bottom:16px">
+    <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#C6FF3D;color:#07070A;padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em">ACCENT SIGNATURE</div>
+      <div><div style="font:600 40px/1 Sora,sans-serif;letter-spacing:-0.04em">Lime électrique</div><div style="margin-top:12px;font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em">#C6FF3D · CTA · FOCUS · DONNÉES CLÉS · &lt;5 % DE LA SURFACE</div></div>
+    </div>
+    <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(135deg,#7C5CFF,#3DDCFF);color:#07070A;padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em">ACCENT SECONDAIRE</div>
+      <div><div style="font:600 40px/1 Sora,sans-serif;letter-spacing:-0.04em">Iridescent</div><div style="margin-top:12px;font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em">#7C5CFF → #3DDCFF · 3D ET HALOS UNIQUEMENT</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);overflow:hidden"><div style="height:120px;background:#07070A"></div><div style="padding:16px 20px;background:#0F0F14;font:500 12px/1.7 'JetBrains Mono',monospace;letter-spacing:0.08em"><div>FOND</div><div style="color:#A1A1AA">#07070A</div></div></div>
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);overflow:hidden"><div style="height:120px;background:#0F0F14"></div><div style="padding:16px 20px;background:#0F0F14;border-top:1px solid rgba(255,255,255,0.08);font:500 12px/1.7 'JetBrains Mono',monospace;letter-spacing:0.08em"><div>SURFACE 1</div><div style="color:#A1A1AA">#0F0F14</div></div></div>
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);overflow:hidden"><div style="height:120px;background:#16161D"></div><div style="padding:16px 20px;background:#0F0F14;font:500 12px/1.7 'JetBrains Mono',monospace;letter-spacing:0.08em"><div>SURFACE 2</div><div style="color:#A1A1AA">#16161D</div></div></div>
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);overflow:hidden"><div style="height:120px;background:#07070A;display:flex;align-items:center;justify-content:center"><div style="width:60%;height:56px;border-radius:12px;border:1px solid rgba(255,255,255,0.08)"></div></div><div style="padding:16px 20px;background:#0F0F14;font:500 12px/1.7 'JetBrains Mono',monospace;letter-spacing:0.08em"><div>BORDURE</div><div style="color:#A1A1AA">RGBA(255,255,255,.08)</div></div></div>
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);overflow:hidden"><div style="height:120px;background:#16161D;display:flex;align-items:flex-end;padding:16px 20px;gap:10px;font:600 32px/1 Sora,sans-serif"><span style="color:#F4F4F5">Aa</span><span style="color:#A1A1AA">Aa</span><span style="color:#52525B">Aa</span></div><div style="padding:16px 20px;background:#0F0F14;font:500 12px/1.7 'JetBrains Mono',monospace;letter-spacing:0.08em"><div>TEXTE 1 · 2 · 3</div><div style="color:#A1A1AA">#F4F4F5 · #A1A1AA · #52525B</div></div></div>
+  </div>
+</section>
+
+<section id="typographie" style="padding:clamp(96px,12vw,200px) 0;border-top:1px solid rgba(255,255,255,0.08)">
+  <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:24px">02 — TYPOGRAPHIE</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:48px;align-items:end;margin-bottom:48px">
+    <div style="font:700 clamp(120px,20vw,280px)/0.8 Sora,sans-serif;letter-spacing:-0.06em">Aa</div>
+    <div style="display:grid;gap:8px;font:500 12px/1.7 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">
+      <div style="color:#F4F4F5">SORA — TITRES</div>
+      <div>GRAISSES 600 · 700</div>
+      <div>DISPLAY 120–160PX · INTERLIGNAGE 0.95 · TRACKING −0.04EM</div>
+    </div>
+  </div>
+
+  <div style="display:grid;border-top:1px solid rgba(255,255,255,0.08)">
+    <div style="display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);gap:24px;align-items:baseline;padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">DISPLAY<br>SORA 700 · 160</div>
+      <div style="font:700 clamp(56px,11vw,160px)/0.95 Sora,sans-serif;letter-spacing:-0.04em">De la maquette</div>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);gap:24px;align-items:baseline;padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">H1<br>SORA 700 · 96</div>
+      <div style="font:700 clamp(44px,6.5vw,96px)/0.95 Sora,sans-serif;letter-spacing:-0.04em">au modèle.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);gap:24px;align-items:baseline;padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">H2<br>SORA 600 · 72</div>
+      <div style="font:600 clamp(36px,5vw,72px)/0.95 Sora,sans-serif;letter-spacing:-0.04em">Projets phares</div>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);gap:24px;align-items:baseline;padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">H3<br>SORA 600 · 32</div>
+      <div style="font:600 32px/1.1 Sora,sans-serif;letter-spacing:-0.03em">Recherche IA sur documents</div>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);gap:24px;align-items:baseline;padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">CORPS<br>INTER 400 · 18 / 1.6</div>
+      <p style="margin:0;font-size:18px;line-height:1.6;color:#A1A1AA;max-width:62ch;text-wrap:pretty">Je conçois et je livre des apps IA utiles qui améliorent le quotidien — de la recherche utilisateur à l'entraînement du modèle, jusqu'au produit en ligne.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);gap:24px;align-items:baseline;padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">PETIT<br>INTER 400 · 16 / 1.6</div>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#A1A1AA;max-width:62ch">Indexation sémantique, recherche vectorielle et synthèse par LLM, 100 % en local.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr);gap:24px;align-items:baseline;padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">LABEL<br>JETBRAINS MONO · 12</div>
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em">RAG · LLM · COMPUTER VISION · 0,983 MRR · EXP_001</div>
+    </div>
+  </div>
+</section>
+
+<section id="grille" style="padding:clamp(96px,12vw,200px) 0;border-top:1px solid rgba(255,255,255,0.08)">
+  <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:24px">03 — GRILLE, ESPACES &amp; MATIÈRE</div>
+  <h2 style="margin:0 0 64px;font:600 clamp(40px,5.5vw,72px)/0.95 Sora,sans-serif;letter-spacing:-0.04em">12 colonnes, de l'air.</h2>
+
+  <div style="position:relative;border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:24px;margin-bottom:16px">
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(8px,1.6vw,24px);height:200px">
+      <div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div><div style="background:rgba(198,255,61,0.06);border-left:1px solid rgba(198,255,61,0.25);border-right:1px solid rgba(198,255,61,0.25)"></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:20px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA"><span>MAX-WIDTH 1440PX</span><span>MARGES 24PX MOBILE · 64PX DESKTOP</span><span>GOUTTIÈRE 24PX</span></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px">
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA;margin-bottom:24px">ÉCHELLE D'ESPACEMENT</div>
+      <div style="display:grid;gap:10px;font:400 12px/1 'JetBrains Mono',monospace;color:#8B8B94">
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px">8</span><span style="height:8px;width:8px;background:#F4F4F5;border-radius:2px"></span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px">16</span><span style="height:8px;width:16px;background:#F4F4F5;border-radius:2px"></span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px">24</span><span style="height:8px;width:24px;background:#F4F4F5;border-radius:2px"></span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px">48</span><span style="height:8px;width:48px;background:#F4F4F5;border-radius:2px"></span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px">64</span><span style="height:8px;width:64px;background:#F4F4F5;border-radius:2px"></span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px">96</span><span style="height:8px;width:96px;background:#F4F4F5;border-radius:2px"></span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px">160</span><span style="height:8px;width:160px;max-width:60%;background:#C6FF3D;border-radius:2px"></span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px">240</span><span style="height:8px;width:240px;max-width:75%;background:#C6FF3D;border-radius:2px"></span></div>
+      </div>
+      <div style="margin-top:20px;font-size:14px;line-height:1.6;color:#A1A1AA">Sections : 160–240px verticaux.</div>
+    </div>
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;display:flex;flex-direction:column;gap:24px">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">RAYONS</div>
+      <div style="display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap">
+        <div style="display:grid;gap:10px"><div style="width:120px;height:96px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);background:#16161D"></div><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">20PX · CARTES</span></div>
+        <div style="display:grid;gap:10px"><div style="width:120px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);background:#16161D"></div><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">999PX · BOUTONS</span></div>
+      </div>
+    </div>
+    <div style="position:relative;border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;overflow:hidden;min-height:300px">
+      <div aria-hidden="true" style="position:absolute;width:220px;height:220px;right:-30px;top:40px;border-radius:999px;background:radial-gradient(circle,#7C5CFF,#3DDCFF 60%,transparent 72%)"></div>
+      <div style="position:relative;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">VERRE &amp; HALO</div>
+      <div style="position:absolute;left:28px;right:28px;bottom:28px;border-radius:20px;padding:20px;background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12)">
+        <div style="font:600 20px/1.2 Sora,sans-serif;letter-spacing:-0.02em">Surface verre</div>
+        <div style="margin-top:6px;font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">BLUR 20PX · BORDURE 1PX TRANSLUCIDE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="composants" style="padding:clamp(96px,12vw,200px) 0;border-top:1px solid rgba(255,255,255,0.08)">
+  <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:24px">04 — COMPOSANTS</div>
+  <h2 style="margin:0 0 64px;font:600 clamp(40px,5.5vw,72px)/0.95 Sora,sans-serif;letter-spacing:-0.04em">Survolez. Tout répond.</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">BOUTON PRIMAIRE — MAGNÉTIQUE 8PX</div>
+      <div style="display:flex;justify-content:center;padding:24px">
+        <button type="button" onMouseMove="{{ magMove }}" onMouseLeave="{{ magLeave }}" onMouseEnter="{{ magEnter }}" style="display:flex;align-items:center;gap:12px;white-space:nowrap;flex-shrink:0;padding:20px 30px;border:0;border-radius:999px;background:#C6FF3D;color:#07070A;font:600 17px/1 Inter,sans-serif;transition:transform 300ms cubic-bezier(0.16,1,0.3,1)">Demander un devis
+          <span aria-hidden="true" style="width:18px;overflow:hidden;display:block"><span data-arrow="" style="display:flex;width:36px;transform:translateX(-18px);transition:transform 300ms cubic-bezier(0.16,1,0.3,1)"><span style="width:18px">→</span><span style="width:18px">→</span></span></span>
+        </button>
+      </div>
+      <div style="font:400 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">PILULE LIME · TEXTE #07070A · 17:1</div>
+    </div>
+
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">BOUTON SECONDAIRE — VERRE AU SURVOL</div>
+      <div style="display:flex;justify-content:center;padding:24px">
+        <button type="button" onMouseMove="{{ magMove }}" onMouseLeave="{{ magLeave }}" onMouseEnter="{{ magEnter }}" style="display:flex;align-items:center;gap:12px;white-space:nowrap;flex-shrink:0;padding:20px 30px;border-radius:999px;border:1px solid rgba(255,255,255,0.16);background:transparent;color:#F4F4F5;font:500 17px/1 Inter,sans-serif;transition:transform 300ms cubic-bezier(0.16,1,0.3,1),background 300ms,border-color 300ms;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)" style-hover="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.3)">Voir mes projets
+          <span aria-hidden="true" style="width:18px;overflow:hidden;display:block"><span data-arrow="" style="display:flex;width:36px;transform:translateX(-18px);transition:transform 300ms cubic-bezier(0.16,1,0.3,1)"><span style="width:18px">↘</span><span style="width:18px">↘</span></span></span>
+        </button>
+      </div>
+      <div style="font:400 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">CONTOUR 16 % · FOND VERRE 6 % AU SURVOL</div>
+    </div>
+
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;display:flex;flex-direction:column;gap:32px">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">TAGS TECHNIQUES</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em"><span style="width:5px;height:5px;border-radius:999px;background:#C6FF3D;box-shadow:0 0 8px #C6FF3D"></span>RAG</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em"><span style="width:5px;height:5px;border-radius:999px;background:#C6FF3D;box-shadow:0 0 8px #C6FF3D"></span>LLM</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em"><span style="width:5px;height:5px;border-radius:999px;background:#C6FF3D;box-shadow:0 0 8px #C6FF3D"></span>COMPUTER VISION</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em"><span style="width:5px;height:5px;border-radius:999px;background:#3DDCFF;box-shadow:0 0 8px #3DDCFF"></span>UI/UX</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em"><span style="width:5px;height:5px;border-radius:999px;background:#3DDCFF;box-shadow:0 0 8px #3DDCFF"></span>DESIGN SYSTEM</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA"><span style="width:5px;height:5px;border-radius:999px;background:#52525B"></span>EN COURS</span>
+      </div>
+      <div style="font:400 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">POINT LIME = IA · CYAN = DESIGN · GRIS = STATUT</div>
+    </div>
+
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;display:flex;flex-direction:column;gap:24px">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">CURSEUR — SURVOLEZ UN PROJET</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <a href="#" data-cursor="voir" aria-label="Voir Airsearch AI" style="border-radius:14px;aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#16161D 0 10px,#131319 10px 20px);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:flex-end;padding:14px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">01 AIRSEARCH AI</a>
+        <a href="#" data-cursor="voir" aria-label="Voir Agrispace" style="border-radius:14px;aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#16161D 0 10px,#131319 10px 20px);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:flex-end;padding:14px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">02 AGRISPACE</a>
+      </div>
+      <div style="font:400 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94">POINT 6PX · CERCLE 36 → 88PX · « VOIR » SUR LES PROJETS · DÉSACTIVÉ AU TACTILE</div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px">
+    <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA;margin-bottom:28px">NAVIGATION — BARRE FLOTTANTE (VISIBLE EN HAUT DE PAGE : ELLE SE RÉTRACTE AU SCROLL ↓, RÉAPPARAÎT AU SCROLL ↑)</div>
+    <div style="overflow-x:auto;padding:24px 0;background:radial-gradient(ellipse at center,rgba(124,92,255,0.18),transparent 70%)">
+      <div style="margin:0 auto;width:max-content;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 20px;border-radius:999px;background:rgba(15,15,20,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);font-size:14px">
+        <span style="font:700 15px/1 Sora,sans-serif;margin-right:14px">CDD<span style="color:#C6FF3D">.</span></span>
+        <span style="padding:10px 12px;color:#F4F4F5">Projets</span><span style="padding:10px 12px;color:#A1A1AA">Services</span><span style="padding:10px 12px;color:#A1A1AA">Lab</span><span style="padding:10px 12px;color:#A1A1AA">Blog</span><span style="padding:10px 12px;color:#A1A1AA">À propos</span><span style="padding:10px 12px;font:500 12px/16px 'JetBrains Mono',monospace;letter-spacing:0.08em">CV ↓</span>
+        <span style="padding:11px 18px;border-radius:999px;background:#C6FF3D;color:#07070A;font-weight:600;margin-left:6px">Demander un devis →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="motion" style="padding:clamp(96px,12vw,200px) 0;border-top:1px solid rgba(255,255,255,0.08)">
+  <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:24px">05 — MOTION</div>
+  <h2 style="margin:0 0 64px;font:600 clamp(40px,5.5vw,72px)/0.95 Sora,sans-serif;letter-spacing:-0.04em">Rapide au départ,<br><span style="color:#A1A1AA">doux à l'arrivée.</span></h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">EASING SIGNATURE</span>
+        <button type="button" onClick="{{ playEase }}" style="white-space:nowrap;flex-shrink:0;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.16);background:transparent;color:#F4F4F5;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em" style-hover="background:rgba(255,255,255,0.06)">▶ REJOUER</button></div>
+      <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:28px;align-items:center">
+        <svg viewBox="-4 -4 108 108" style="width:120px;height:120px;overflow:visible"><rect x="0" y="0" width="100" height="100" fill="none" stroke="rgba(255,255,255,0.08)"></rect><path d="M0 100 C16 0 30 0 100 0" fill="none" stroke="#C6FF3D" stroke-width="2"></path></svg>
+        <div style="display:grid;gap:18px">
+          <div><div style="font:400 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#8B8B94;margin-bottom:8px">LINÉAIRE</div><div style="position:relative;height:16px;border-radius:999px;background:#16161D"><div data-ease="lin" style="position:absolute;left:0;top:0;width:16px;height:16px;border-radius:999px;background:#52525B"></div></div></div>
+          <div><div style="font:400 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:8px">SIGNATURE</div><div style="position:relative;height:16px;border-radius:999px;background:#16161D"><div data-ease="sig" style="position:absolute;left:0;top:0;width:16px;height:16px;border-radius:999px;background:#C6FF3D"></div></div></div>
+        </div>
+      </div>
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em">CUBIC-BEZIER(0.16, 1, 0.3, 1)</div>
+    </div>
+
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">TITRE — MOT PAR MOT · STAGGER 60MS</span>
+        <button type="button" onClick="{{ playWords }}" style="white-space:nowrap;flex-shrink:0;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.16);background:transparent;color:#F4F4F5;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em" style-hover="background:rgba(255,255,255,0.06)">▶ REJOUER</button></div>
+      <div data-demo-words="" style="font:700 clamp(40px,4.4vw,64px)/0.95 Sora,sans-serif;letter-spacing:-0.04em;flex:1;display:flex;align-items:center">
+        <div><span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">De</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">la</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">maquette</span></span><br><span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" style="display:inline-block">au</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.16em;margin-bottom:-0.08em"><span data-w="" data-irid="" style="display:inline-block;background:linear-gradient(90deg,#7C5CFF,#3DDCFF,#7C5CFF);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent">modèle.</span></span></div>
+      </div>
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em">MASQUE VERTICAL · 1000MS · TRANSLATEY 105 % → 0</div>
+    </div>
+
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">IMAGE — CLIP-PATH + ZOOM 1.1 → 1</span>
+        <button type="button" onClick="{{ playImage }}" style="white-space:nowrap;flex-shrink:0;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.16);background:transparent;color:#F4F4F5;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em" style-hover="background:rgba(255,255,255,0.06)">▶ REJOUER</button></div>
+      <div data-demo-img="" style="border-radius:14px;overflow:hidden;aspect-ratio:16/9">
+        <div data-demo-img-inner="" style="width:100%;height:100%;background:repeating-linear-gradient(135deg,#1B1B24 0 12px,#15151C 12px 24px);display:flex;align-items:center;justify-content:center;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">[ VISUEL PROJET — TIDY1.PNG ]</div>
+      </div>
+      <div style="font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em">INSET(100% 0 0 0) → INSET(0) · 1200MS</div>
+    </div>
+
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:28px;display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">DURÉES</div>
+      <div style="display:grid;border-top:1px solid rgba(255,255,255,0.08)">
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span>Micro-interactions</span><span style="font:500 13px/1.4 'JetBrains Mono',monospace;color:#C6FF3D">200–300MS</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span>Révélations</span><span style="font:500 13px/1.4 'JetBrains Mono',monospace;color:#C6FF3D">800–1200MS</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span>Stagger mots</span><span style="font:500 13px/1.4 'JetBrains Mono',monospace;color:#C6FF3D">60MS</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span>Séquence d'entrée</span><span style="font:500 13px/1.4 'JetBrains Mono',monospace;color:#C6FF3D">~2200MS</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span>Scroll</span><span style="font:500 13px/1.4 'JetBrains Mono',monospace;color:#C6FF3D">LISSÉ (TYPE LENIS)</span></div>
+      </div>
+      <p style="margin:0;font-size:15px;line-height:1.6;color:#A1A1AA">prefers-reduced-motion : fondus simples de 300ms, 3D statique, aucun défilement automatique.</p>
+    </div>
+  </div>
+</section>
+
+<section id="accessibilite" style="padding:clamp(96px,12vw,200px) 0;border-top:1px solid rgba(255,255,255,0.08)">
+  <div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:24px">06 — ACCESSIBILITÉ AA</div>
+  <h2 style="margin:0 0 64px;font:600 clamp(40px,5.5vw,72px)/0.95 Sora,sans-serif;letter-spacing:-0.04em">Spectaculaire, jamais illisible.</h2>
+  <div style="display:grid;border-top:1px solid rgba(255,255,255,0.08)">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span style="color:#F4F4F5;font-size:18px">Texte principal #F4F4F5 sur fond</span><span style="font:500 14px/1 'JetBrains Mono',monospace">18,6:1</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;padding:6px 10px;border-radius:999px;background:#C6FF3D;color:#07070A">AAA</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span style="color:#A1A1AA;font-size:18px">Texte secondaire #A1A1AA sur fond</span><span style="font:500 14px/1 'JetBrains Mono',monospace">7,8:1</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;padding:6px 10px;border-radius:999px;background:#C6FF3D;color:#07070A">AAA</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span style="font-size:18px"><span style="color:#07070A;background:#C6FF3D;padding:2px 8px;border-radius:6px">Noir sur lime</span> — boutons primaires</span><span style="font:500 14px/1 'JetBrains Mono',monospace">17:1</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;padding:6px 10px;border-radius:999px;background:#C6FF3D;color:#07070A">AAA</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span style="color:#7C5CFF;font-size:18px">Violet #7C5CFF — grands titres uniquement</span><span style="font:500 14px/1 'JetBrains Mono',monospace">4,6:1</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.2)">AA</span></div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><span style="color:#A1A1AA;font-size:18px"><span style="color:#52525B">Tertiaire #52525B</span> — décoratif, jamais pour du texte utile</span><span style="font:500 14px/1 'JetBrains Mono',monospace">2,6:1</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;padding:6px 10px;border-radius:999px;border:1px solid #FF6B6B;color:#FF8A8A">ÉCHEC</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-top:48px">
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:24px"><div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:12px">FOCUS</div><p style="margin:0;color:#A1A1AA;line-height:1.6">Contour lime 2px, décalé de 3px. Essayez Tab sur cette page.</p></div>
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:24px"><div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:12px">MOUVEMENT RÉDUIT</div><p style="margin:0;color:#A1A1AA;line-height:1.6">Révélations remplacées par des fondus ; curseur et 3D figés.</p></div>
+    <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.08);background:#0F0F14;padding:24px"><div style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D;margin-bottom:12px">TACTILE</div><p style="margin:0;color:#A1A1AA;line-height:1.6">Cibles ≥ 44px, curseur personnalisé et magnétisme désactivés.</p></div>
+  </div>
+</section>
+</main>
+
+<footer style="max-width:1440px;margin:0 auto;padding:48px clamp(24px,4.5vw,64px);border-top:1px solid rgba(255,255,255,0.08);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#A1A1AA">
+  <span>© 2026 CALEB DEROUX DESAILLY</span><span>DESIGN × INTELLIGENCE — DS V1.0</span><a href="#top">RETOUR EN HAUT ↑</a>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;grain&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Ambiance&quot;},&quot;customCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Ambiance&quot;},&quot;reducedMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Accessibilité&quot;}}">
+class Component extends DCLogic {
+  state = { navHidden: false, wide: true };
+  E = 'cubic-bezier(0.16, 1, 0.3, 1)';
+
+  rm() { return this.props.reducedMotion || matchMedia('(prefers-reduced-motion: reduce)').matches; }
+
+  componentDidMount() {
+    this.last = window.scrollY;
+    this.onScroll = () => {
+      const y = window.scrollY;
+      if (y > this.last + 4 && y > 120 && !this.state.navHidden) this.setState({ navHidden: true });
+      else if (y < this.last - 4 && this.state.navHidden) this.setState({ navHidden: false });
+      this.last = y;
+    };
+    this.onResize = () => { const w = innerWidth > 960; if (w !== this.state.wide) this.setState({ wide: w }); };
+    addEventListener('scroll', this.onScroll, { passive: true });
+    addEventListener('resize', this.onResize);
+    this.onResize();
+
+    document.querySelectorAll('[data-irid]').forEach(el => {
+      if (!this.rm()) el.animate([{ backgroundPosition: '0% 0' }, { backgroundPosition: '200% 0' }], { duration: 6000, iterations: Infinity });
+    });
+    document.querySelectorAll('[data-pulse]').forEach(el => {
+      if (!this.rm()) el.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0.35, transform: 'scale(0.7)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 2000, iterations: Infinity });
+    });
+
+    this.io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { this.reveal(en.target); this.io.unobserve(en.target); }
+    }), { threshold: 0.2 });
+    document.querySelectorAll('[data-reveal], [data-demo-words]').forEach(el => this.io.observe(el));
+    const imgEl = document.querySelector('[data-demo-img]');
+    if (imgEl) { this.io2 = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { this.playImage(); this.io2.disconnect(); } }), { threshold: 0.4 }); this.io2.observe(imgEl); }
+
+    this.setupCursor();
+  }
+
+  componentDidUpdate(prev) {
+    if (prev.customCursor !== this.props.customCursor) { this.teardownCursor(); this.setupCursor(); }
+  }
+
+  componentWillUnmount() {
+    removeEventListener('scroll', this.onScroll);
+    removeEventListener('resize', this.onResize);
+    this.io && this.io.disconnect();
+    this.io2 && this.io2.disconnect();
+    this.teardownCursor();
+  }
+
+  setupCursor() {
+    if (this.props.customCursor === false || !matchMedia('(pointer: fine)').matches) return;
+    const dot = document.querySelector('[data-cc="dot"]'), ring = document.querySelector('[data-cc="ring"]'), label = document.querySelector('[data-cc="label"]');
+    if (!dot || !ring) return;
+    document.body.classList.add('cc-on');
+    let x = -100, y = -100, rx = -100, ry = -100;
+    this.ccMove = e => { x = e.clientX; y = e.clientY; dot.style.opacity = 1; ring.style.opacity = 1; dot.style.transform = `translate(${x}px,${y}px)`; };
+    this.ccOver = e => {
+      const t = e.target.closest && e.target.closest('a,button,[data-cursor]');
+      const voir = e.target.closest && e.target.closest('[data-cursor="voir"]');
+      const s = voir ? 88 : t ? 56 : 36;
+      ring.style.width = ring.style.height = s + 'px';
+      ring.style.margin = `-${s / 2}px 0 0 -${s / 2}px`;
+      ring.style.background = voir ? '#C6FF3D' : 'transparent';
+      ring.style.borderColor = voir ? '#C6FF3D' : t ? 'rgba(198,255,61,0.6)' : 'rgba(244,244,245,0.4)';
+      label.style.opacity = voir ? 1 : 0;
+      dot.style.opacity = voir ? 0 : 1;
+    };
+    this.ccLeave = () => { dot.style.opacity = 0; ring.style.opacity = 0; };
+    const k = this.rm() ? 1 : 0.18;
+    const loop = () => { rx += (x - rx) * k; ry += (y - ry) * k; ring.style.transform = `translate(${rx}px,${ry}px)`; this.raf = requestAnimationFrame(loop); };
+    loop();
+    addEventListener('mousemove', this.ccMove);
+    addEventListener('mouseover', this.ccOver);
+    document.addEventListener('mouseleave', this.ccLeave);
+  }
+
+  teardownCursor() {
+    cancelAnimationFrame(this.raf);
+    document.body.classList.remove('cc-on');
+    if (this.ccMove) { removeEventListener('mousemove', this.ccMove); removeEventListener('mouseover', this.ccOver); document.removeEventListener('mouseleave', this.ccLeave); }
+    document.querySelectorAll('[data-cc]').forEach(el => { if (el.dataset.cc !== 'label') el.style.opacity = 0; });
+  }
+
+  reveal(el) {
+    el.querySelectorAll('[data-w]').forEach((w, i) => {
+      if (this.rm()) w.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, fill: 'both' });
+      else w.animate([{ transform: 'translateY(105%)' }, { transform: 'translateY(0)' }], { duration: 1000, delay: i * 60, easing: this.E, fill: 'both' });
+    });
+  }
+
+  playEase = () => {
+    const d = this.rm() ? 0 : 1200;
+    const kf = [{ left: '0%' }, { left: 'calc(100% - 16px)' }];
+    const a = document.querySelector('[data-ease="lin"]'), b = document.querySelector('[data-ease="sig"]');
+    a && a.animate(kf, { duration: d, easing: 'linear', fill: 'both' });
+    b && b.animate(kf, { duration: d, easing: this.E, fill: 'both' });
+  };
+
+  playWords = () => { const el = document.querySelector('[data-demo-words]'); el && this.reveal(el); };
+
+  playImage = () => {
+    const box = document.querySelector('[data-demo-img]'), inner = document.querySelector('[data-demo-img-inner]');
+    if (!box) return;
+    if (this.rm()) { box.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, fill: 'both' }); return; }
+    box.animate([{ clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)' }], { duration: 1200, easing: this.E, fill: 'both' });
+    inner.animate([{ transform: 'scale(1.1)' }, { transform: 'scale(1)' }], { duration: 1400, easing: this.E, fill: 'both' });
+  };
+
+  magEnter = e => { const a = e.currentTarget.querySelector('[data-arrow]'); if (a) a.style.transform = 'translateX(0)'; };
+  magMove = e => {
+    if (this.rm() || !matchMedia('(pointer: fine)').matches) return;
+    const b = e.currentTarget, r = b.getBoundingClientRect();
+    const dx = ((e.clientX - r.left) / r.width - 0.5) * 16, dy = ((e.clientY - r.top) / r.height - 0.5) * 16;
+    b.style.transform = `translate(${dx.toFixed(1)}px,${dy.toFixed(1)}px)`;
+  };
+  magLeave = e => {
+    const b = e.currentTarget; b.style.transform = 'translate(0,0)';
+    const a = b.querySelector('[data-arrow]'); if (a) a.style.transform = 'translateX(-18px)';
+  };
+
+  renderVals() {
+    return {
+      navY: this.state.navHidden ? 'calc(-100% - 40px)' : '0px',
+      wide: this.state.wide,
+      grain: this.props.grain ?? true,
+      magMove: this.magMove, magLeave: this.magLeave, magEnter: this.magEnter,
+      playEase: this.playEase, playWords: this.playWords, playImage: this.playImage,
+    };
+  }
+}
+</script>
+</body>
+</html>

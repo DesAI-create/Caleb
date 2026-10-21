@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Demander un devis — Caleb Deroux Desailly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Caveat+Brush&amp;family=Anton&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#F5F5F7;color:#0B0B0F;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#0B0B0F;text-decoration:none}a:hover{color:#7C5CFF}
+::selection{background:#C6FF3D;color:#0B0B0F}
+:focus-visible{outline:2px solid #0B0B0F;outline-offset:2px;box-shadow:0 0 0 5px #C6FF3D}
+input::placeholder,textarea::placeholder{color:#A1A1AA}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;overflow:hidden;background-color:#F5F5F7;background-image:radial-gradient(#D4D4D8 1px, transparent 1.3px);background-size:24px 24px">
+
+<div data-curtain="" aria-hidden="true" style="position:fixed;inset:0;z-index:150;display:none;pointer-events:none">
+  <div data-curtain-p="" style="position:absolute;inset:0;background:#2F6BFF;transform:translateY(100%)"></div>
+  <div data-curtain-p="" style="position:absolute;inset:0;background:#C6FF3D;transform:translateY(100%)"></div>
+  <div data-curtain-p="" style="position:absolute;inset:0;background:#0B0B0F;transform:translateY(100%);display:flex;align-items:center;justify-content:center;overflow:hidden">
+    <div style="overflow:hidden;padding:0.22em 0.05em 0.04em"><div data-curtain-l="" style="font:400 min(17vw,28vh)/0.92 Anton,Impact,sans-serif;letter-spacing:0.01em;color:#F4F4F5;text-transform:uppercase;white-space:nowrap;transform:translateY(110%)">Devis</div></div>
+    <span style="position:absolute;left:clamp(24px,4.5vw,64px);bottom:clamp(24px,5vh,48px);font:500 12px/1.2 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#C6FF3D">CALEB DEROUX DESAILLY — AI PRODUCT DESIGNER</span>
+    <span style="position:absolute;right:clamp(24px,4.5vw,64px);bottom:clamp(24px,5vh,48px);font:400 28px/1 'Permanent Marker',cursive;color:#C6FF3D;transform:rotate(-6deg)">on y va !</span>
+  </div>
+</div>
+
+<div data-halo="" aria-hidden="true" style="position:absolute;right:-30vw;bottom:-60vh;width:110vw;aspect-ratio:1.4;pointer-events:none">
+  <div data-breathe="" style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(closest-side,rgba(124,92,255,0.42),rgba(47,107,255,0.24) 45%,rgba(47,107,255,0.05) 70%,transparent 80%);filter:blur(30px)"></div>
+  <div data-breathe="" style="position:absolute;inset:18%;border-radius:50%;border:2px solid rgba(124,92,255,0.25);filter:blur(2px)"></div>
+</div>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:80;padding:14px 16px">
+  <nav aria-label="Navigation" style="max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(255,255,255,0.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid #FFFFFF;box-shadow:0 14px 40px -18px rgba(47,107,255,0.45)">
+    <a href="Accueil v2.dc.html" data-page="Accueil" style="font:700 17px/1 Sora,sans-serif;letter-spacing:-0.03em;white-space:nowrap">Caleb D.<span style="color:#7C5CFF">D</span></a>
+    <span style="display:{{ wideInline }};font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B">DEMANDE DE DEVIS · RÉPONSE SOUS 48H</span>
+    <a href="Accueil v2.dc.html" data-page="Accueil" style="display:flex;align-items:center;gap:10px;padding:6px 6px 6px 18px;border-radius:999px;background:#0B0B0F;color:#FFFFFF;font:600 14px/1 Inter,sans-serif;white-space:nowrap" style-hover="color:#FFFFFF;background:#27272A">Retour au site<span aria-hidden="true" style="width:30px;height:30px;border-radius:999px;background:#C6FF3D;color:#0B0B0F;display:flex;align-items:center;justify-content:center">✕</span></a>
+  </nav>
+</header>
+
+<main style="position:relative;z-index:2;max-width:1440px;margin:0 auto;min-height:100vh;padding:clamp(110px,15vh,150px) clamp(24px,4.5vw,64px) clamp(130px,17vh,160px);display:grid;grid-template-columns:{{ cols }};gap:clamp(32px,5vw,80px);align-items:center">
+
+  <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+  <section data-qwrap="" aria-live="polite" style="position:relative;min-width:0">
+    <div data-qin="" style="display:flex;align-items:center;gap:14px;margin-bottom:clamp(14px,2.4vh,22px)">
+      <span style="display:flex;align-items:center;gap:8px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B"><span style="width:6px;height:6px;border-radius:999px;background:#C6FF3D;box-shadow:0 0 0 3px rgba(198,255,61,0.35)"></span>ÉTAPE {{ q.num }} / 05</span>
+      <span style="font:400 24px/1 'Caveat Brush',cursive;color:#FF5A36;transform:rotate(-4deg)">{{ q.hand }}</span>
+    </div>
+    <div style="overflow:hidden;padding-bottom:0.1em">
+      <h1 data-qt="" style="margin:0;font:700 clamp(40px,5.6vw,92px)/0.95 Sora,sans-serif;letter-spacing:-0.045em">{{ q.title }}</h1>
+    </div>
+    <p data-qin="" style="margin:clamp(12px,2vh,18px) 0 clamp(20px,3.6vh,36px);font-size:clamp(16px,1.3vw,19px);line-height:1.55;color:#52525B;max-width:46ch">{{ q.sub }}</p>
+
+    <sc-if value="{{ isChoice }}" hint-placeholder-val="{{ true }}">
+      <div role="{{ q.role }}" aria-label="{{ q.title }}" style="display:grid;grid-template-columns:{{ optCols }};gap:12px;max-width:760px">
+        <sc-for list="{{ opts }}" as="o" hint-placeholder-count="4">
+          <button type="button" data-opt="" role="{{ o.role }}" aria-checked="{{ o.aria }}" onClick="{{ o.pick }}" style="position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;min-height:84px;padding:14px 16px;border-radius:22px;border:1.5px solid {{ o.bd }};background:{{ o.bg }};color:{{ o.ink }};text-align:left;cursor:pointer;box-shadow:{{ o.sh }};transition:background 300ms,color 300ms,border-color 300ms,box-shadow 400ms,transform 400ms cubic-bezier(0.34,1.56,0.64,1);transform:{{ o.tf }}" style-hover="border-color:#0B0B0F">
+            <span style="position:relative;width:48px;height:48px;border-radius:14px;background:{{ o.grad }};box-shadow:inset 0 2px 0 rgba(255,255,255,0.65),inset 0 -6px 12px rgba(20,10,90,0.25),0 10px 20px -10px rgba(47,107,255,0.6);display:flex;align-items:center;justify-content:center;color:{{ o.gink }};font:700 18px/1 Sora,sans-serif"><span aria-hidden="true" style="position:absolute;left:10%;top:6%;width:80%;height:42%;border-radius:10px;background:linear-gradient(rgba(255,255,255,0.55),rgba(255,255,255,0))"></span>{{ o.glyph }}</span>
+            <span style="display:grid;gap:5px;min-width:0"><span style="font:600 17px/1.2 Sora,sans-serif;letter-spacing:-0.02em">{{ o.label }}</span><span style="font-size:13.5px;line-height:1.4;color:{{ o.sub }}">{{ o.desc }}</span></span>
+            <span style="flex:none;width:30px;height:30px;border-radius:9px;border:1.5px solid {{ o.kbd }};display:flex;align-items:center;justify-content:center;font:500 12px/1 'JetBrains Mono',monospace;background:{{ o.kbg }};color:{{ o.kink }};transition:background 300ms">{{ o.key }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="margin-top:14px;font:500 11px/1.4 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B;display:{{ wideBlock }}">{{ q.kbd }}</div>
+    </sc-if>
+
+    <sc-if value="{{ isForm }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;gap:18px;max-width:720px">
+        <div data-opt="" style="display:grid;gap:8px">
+          <label for="f-desc" style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B">VOTRE PROJET *</label>
+          <textarea id="f-desc" rows="4" value="{{ ans.desc }}" onChange="{{ onDesc }}" placeholder="Objectif, utilisateurs, données disponibles, contraintes…" style="width:100%;padding:16px 18px;border-radius:20px;border:1.5px solid {{ descBd }};background:rgba(255,255,255,0.85);font:400 17px/1.55 Inter,sans-serif;color:#0B0B0F;resize:vertical;outline:none;transition:border-color 300ms,box-shadow 300ms" style-focus="border-color:#2F6BFF;box-shadow:0 0 0 4px rgba(47,107,255,0.15)"></textarea>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ formCols }};gap:14px">
+          <div data-opt="" style="display:grid;gap:8px">
+            <label for="f-name" style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B">NOM *</label>
+            <input id="f-name" type="text" autocomplete="name" value="{{ ans.name }}" onChange="{{ onName }}" placeholder="Votre nom" style="width:100%;height:56px;padding:0 18px;border-radius:999px;border:1.5px solid {{ nameBd }};background:rgba(255,255,255,0.85);font:400 17px/1 Inter,sans-serif;color:#0B0B0F;outline:none;transition:border-color 300ms,box-shadow 300ms" style-focus="border-color:#2F6BFF;box-shadow:0 0 0 4px rgba(47,107,255,0.15)">
+          </div>
+          <div data-opt="" style="display:grid;gap:8px">
+            <label for="f-email" style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B">EMAIL *</label>
+            <input id="f-email" type="email" autocomplete="email" value="{{ ans.email }}" onChange="{{ onEmail }}" placeholder="vous@entreprise.com" style="width:100%;height:56px;padding:0 18px;border-radius:999px;border:1.5px solid {{ emailBd }};background:rgba(255,255,255,0.85);font:400 17px/1 Inter,sans-serif;color:#0B0B0F;outline:none;transition:border-color 300ms,box-shadow 300ms" style-focus="border-color:#2F6BFF;box-shadow:0 0 0 4px rgba(47,107,255,0.15)">
+          </div>
+        </div>
+        <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:0.08em;color:{{ formHintC }}">{{ formHint }}</div>
+      </div>
+    </sc-if>
+
+    <div data-qin="" style="margin-top:clamp(22px,4vh,40px);font-size:14px;line-height:1.5;color:#52525B">Pressé ? Écrivez-moi directement : <a href="mailto:devaiddc@gmail.com" style="font-weight:600;color:#0B0B0F;text-decoration:underline;text-underline-offset:3px">devaiddc@gmail.com</a> · <a href="https://www.linkedin.com/in/desailly-caleb-deroux-398132375/" target="_blank" rel="noopener" style="font-weight:600;color:#0B0B0F;text-decoration:underline;text-underline-offset:3px">LinkedIn ↗</a></div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isDone }}" hint-placeholder-val="{{ false }}">
+  <section data-done="" aria-live="polite" style="position:relative;grid-column:1 / -1;display:flex;flex-direction:column;align-items:center;text-align:center">
+    <div style="position:relative;width:min(460px,86vw);height:clamp(220px,32vh,300px)">
+      <div data-dcard="0" style="position:absolute;left:50%;top:50%;width:220px;margin:-60px 0 0 -110px;padding:12px;border-radius:20px;background:rgba(255,255,255,0.85);border:1px solid #FFFFFF;box-shadow:0 24px 50px -20px rgba(124,92,255,0.5);display:grid;gap:8px;text-align:left">
+        <span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B">AIRSEARCH AI</span>
+        <span style="justify-self:end;padding:7px 10px;border-radius:12px 12px 4px 12px;background:#0B0B0F;color:#FFFFFF;font-size:11px">Nouvelle demande ?</span>
+        <span style="padding:7px 10px;border-radius:12px 12px 12px 4px;background:#FFFFFF;border:1px solid rgba(11,11,15,0.06);font-size:11px">Bien reçue ✓</span>
+      </div>
+      <div data-dcard="1" style="position:absolute;left:50%;top:50%;width:170px;margin:-70px 0 0 -85px;padding:10px;border-radius:20px;background:rgba(255,255,255,0.85);border:1px solid #FFFFFF;box-shadow:0 24px 50px -20px rgba(47,107,255,0.5)">
+        <span style="display:block;font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B;margin-bottom:8px">AGRISPACE</span>
+        <span style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px;border-radius:10px;overflow:hidden">
+          <sc-for list="{{ miniNdvi }}" as="c" hint-placeholder-count="24"><span style="aspect-ratio:1;background:{{ c }}"></span></sc-for>
+        </span>
+      </div>
+      <div data-dcard="2" style="position:absolute;left:50%;top:50%;width:200px;margin:-50px 0 0 -100px;padding:12px;border-radius:20px;background:rgba(255,255,255,0.85);border:1px solid #FFFFFF;box-shadow:0 24px 50px -20px rgba(255,122,61,0.5);display:grid;gap:6px;text-align:left">
+        <span style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B">GENIE UPB</span>
+        <span style="height:22px;border-radius:8px;background:rgba(255,122,61,0.16)"></span><span style="height:22px;border-radius:8px;background:#FFFFFF"></span><span style="height:22px;border-radius:8px;background:#FFFFFF"></span>
+      </div>
+      <div data-dcard="3" style="position:absolute;left:50%;top:50%;width:230px;margin:-30px 0 0 -115px;padding:10px;border-radius:20px;background:rgba(255,255,255,0.85);border:1px solid #FFFFFF;box-shadow:0 24px 50px -20px rgba(124,92,255,0.45)">
+        <span style="display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;background:#FFFFFF;border:1px solid rgba(11,11,15,0.08);font-size:12px;text-align:left"><span style="color:#FF7A3D;font-weight:600">⌕</span>votre projet</span>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 200 160" style="position:absolute;left:50%;top:50%;width:min(300px,70vw);transform:translate(-50%,-50%);overflow:visible;z-index:5">
+        <path data-check="" pathLength="1" d="M28 86 C44 98 58 112 72 130 C96 88 132 44 176 16" fill="none" stroke="#0B0B0F" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1"></path>
+        <path data-check="" pathLength="1" d="M28 86 C44 98 58 112 72 130 C96 88 132 44 176 16" fill="none" stroke="#C6FF3D" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:1"></path>
+      </svg>
+      <span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:3px;background:#C6FF3D;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:#2F6BFF;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:3px;background:#FF5A36;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:#7C5CFF;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:3px;background:#C6FF3D;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:#2F6BFF;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:3px;background:#FF5A36;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:#7C5CFF;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:3px;background:#C6FF3D;opacity:0"></span><span data-spark="" aria-hidden="true" style="position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:#2F6BFF;opacity:0"></span>
+    </div>
+    <div style="overflow:hidden;margin-top:clamp(12px,3vh,28px);padding:0.22em 0.05em 0.04em;margin-bottom:-0.04em">
+      <h1 data-dt="" style="margin:0;font:400 clamp(64px,10vw,160px)/0.88 Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:0.01em">Demande <span style="color:#2F6BFF">envoyée !</span></h1>
+    </div>
+    <p data-din="" style="margin:18px 0 0;font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:#52525B;max-width:44ch">Merci {{ firstName }}. Je vous réponds sous 48h, à l'adresse <span style="color:#0B0B0F;font-weight:600">{{ ans.email }}</span>.</p>
+    <span data-din="" style="margin-top:6px;font:400 26px/1 'Permanent Marker',cursive;color:#FF5A36;transform:rotate(-4deg)">promis !</span>
+    <div data-din="" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px">
+      <a href="Accueil v2.dc.html" data-page="Accueil" style="display:inline-flex;align-items:center;gap:12px;padding:6px 6px 6px 22px;border-radius:999px;background:#0B0B0F;color:#FFFFFF;font:600 15px/1 Inter,sans-serif;box-shadow:0 18px 36px -12px rgba(124,92,255,0.6)" style-hover="color:#FFFFFF;background:#27272A">Retour à l'accueil<span aria-hidden="true" style="width:38px;height:38px;border-radius:999px;background:#C6FF3D;color:#0B0B0F;display:flex;align-items:center;justify-content:center">→</span></a>
+      <a href="Accueil v2.dc.html#projets" data-page="Projets" style="display:flex;align-items:center;padding:0 22px;min-height:50px;border-radius:999px;background:rgba(255,255,255,0.8);border:1px solid #FFFFFF;box-shadow:0 10px 30px -14px rgba(47,107,255,0.45);font:500 15px/1 Inter,sans-serif" style-hover="background:#FFFFFF;color:#0B0B0F">Voir mes projets</a>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ showRecap }}" hint-placeholder-val="{{ true }}">
+  <aside data-recap="" aria-label="Récapitulatif de votre demande" style="position:relative;justify-self:end;width:100%;max-width:400px">
+    <span aria-hidden="true" style="position:absolute;left:-18px;top:-30px;font:400 26px/1 'Permanent Marker',cursive;color:#2F6BFF;transform:rotate(-8deg);z-index:2">votre ticket ↓</span>
+    <div style="position:relative;border-radius:28px;background:#FFFFFF;box-shadow:0 40px 80px -40px rgba(47,107,255,0.6),0 0 0 1px rgba(11,11,15,0.05);transform:rotate(2deg)">
+      <div style="padding:22px 24px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+        <div style="display:grid;gap:8px"><span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B">DEMANDE DE DEVIS</span><span style="font:400 34px/0.9 Anton,Impact,sans-serif;text-transform:uppercase">Votre projet</span></div>
+        <span style="position:relative;width:44px;height:44px;border-radius:13px;background:linear-gradient(150deg,#ECFFB8,#C6FF3D 55%,#96D10F);box-shadow:inset 0 2px 0 rgba(255,255,255,0.8),0 12px 20px -10px rgba(150,209,15,0.8);display:flex;align-items:center;justify-content:center;font:700 15px/1 Sora,sans-serif">IA</span>
+      </div>
+      <div aria-hidden="true" style="position:relative;height:0;border-top:2px dashed rgba(11,11,15,0.12);margin:0 18px"><span style="position:absolute;left:-32px;top:-12px;width:22px;height:22px;border-radius:50%;background:#F5F5F7"></span><span style="position:absolute;right:-32px;top:-12px;width:22px;height:22px;border-radius:50%;background:#F5F5F7"></span></div>
+      <div style="padding:10px 16px 8px;display:grid">
+        <sc-for list="{{ recap }}" as="rc" hint-placeholder-count="5">
+          <div data-rrow="{{ rc.i }}" style="display:grid;grid-template-columns:22px 76px minmax(0,1fr);gap:10px;align-items:center;padding:11px 8px;border-radius:14px;background:{{ rc.bg }};transition:background 500ms">
+            <span style="width:22px;height:22px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:11px;background:{{ rc.dotBg }};color:#0B0B0F;border:{{ rc.dotBd }};transition:background 300ms">{{ rc.icon }}</span>
+            <span style="font:500 10px/1.2 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B">{{ rc.label }}</span>
+            <span style="font:600 14px/1.3 Inter,sans-serif;color:{{ rc.ink }};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ rc.val }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin:4px 16px 18px;padding:12px 14px;border-radius:16px;background:#0B0B0F;color:#FFFFFF;display:flex;justify-content:space-between;align-items:center;gap:10px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:0.08em"><span style="display:flex;align-items:center;gap:8px"><span data-pulse="" style="width:7px;height:7px;border-radius:999px;background:#C6FF3D"></span>RÉPONSE SOUS 48H</span><span style="color:#C6FF3D">{{ filledL }}</span></div>
+    </div>
+  </aside>
+  </sc-if>
+</main>
+
+<sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:70;padding:0 16px 16px;pointer-events:none">
+  <div data-bar="" style="pointer-events:auto;max-width:1440px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(255,255,255,0.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid #FFFFFF;box-shadow:0 20px 50px -24px rgba(47,107,255,0.55)">
+    <span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0.08em;color:#52525B;white-space:nowrap">{{ q.num }} / 05</span>
+    <div role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="{{ stepN }}" aria-label="Progression" style="position:relative;flex:1;height:6px;border-radius:999px;background:rgba(11,11,15,0.08);overflow:hidden">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:{{ progW }};border-radius:999px;background:#2F6BFF;transition:width 800ms cubic-bezier(0.16,1,0.3,1)"></div>
+    </div>
+    <button type="button" onClick="{{ back }}" aria-label="Étape précédente" style="height:48px;padding:0 18px;border-radius:999px;border:1px solid rgba(11,11,15,0.12);background:#FFFFFF;color:#0B0B0F;font:500 14px/1 Inter,sans-serif;white-space:nowrap;flex:none;cursor:pointer;opacity:{{ backOp }};pointer-events:{{ backPE }};transition:opacity 300ms" style-hover="background:#F5F5F7">← Retour</button>
+    <button type="button" data-next="" onClick="{{ next }}" style="display:flex;align-items:center;gap:12px;height:52px;padding:0 6px 0 22px;border-radius:999px;border:0;background:{{ nextBg }};color:{{ nextInk }};font:600 15px/1 Inter,sans-serif;cursor:pointer;white-space:nowrap;transition:background 300ms,color 300ms">{{ nextL }}<span aria-hidden="true" style="width:40px;height:40px;border-radius:999px;background:{{ nextDot }};color:#0B0B0F;display:flex;align-items:center;justify-content:center;transition:background 300ms">→</span></button>
+  </div>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { step: 0, dir: 1, w: 1440, type: '', needs: [], budget: '', delay: '', desc: '', name: '', email: '', tried: false };
+  E = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  Q = [
+    { title: 'Vous êtes…', sub: 'Pour adapter la proposition à votre contexte.', hand: 'facile !', kbd: 'ASTUCE : APPUYEZ SUR A, B, C OU D' },
+    { title: 'De quoi avez-vous besoin ?', sub: 'Plusieurs réponses possibles : je conçois et je livre de bout en bout.', hand: 'plusieurs choix ok', kbd: 'A–D POUR COCHER · ENTRÉE POUR CONTINUER' },
+    { title: 'Quel budget envisagez-vous ?', sub: 'Une fourchette indicative suffit, sans engagement.', hand: 'sans engagement', kbd: 'ASTUCE : APPUYEZ SUR A, B, C, D OU E' },
+    { title: 'Pour quand ?', sub: 'Le délai souhaité pour une première mise en ligne.', hand: 'on s’adapte', kbd: 'ASTUCE : APPUYEZ SUR A, B, C OU D' },
+    { title: 'Parlez-moi de votre projet.', sub: 'Quelques lignes suffisent. Je reviens vers vous sous 48h.', hand: 'dernière ligne droite !' },
+  ];
+  G = ['linear-gradient(150deg,#B7A8FF,#7C5CFF 55%,#5B3FE0)', 'linear-gradient(150deg,#9DB8FF,#2F6BFF 55%,#1C4FD0)', 'linear-gradient(150deg,#A6E9FF,#3DB4FF 55%,#1E86D9)', 'linear-gradient(150deg,#ECFFB8,#C6FF3D 55%,#96D10F)', 'linear-gradient(150deg,#FFC2A3,#FF7A3D 55%,#E0561F)'];
+  O = [
+    [['Particulier', 'Un projet personnel ou une idée à tester.', '☺'], ['Startup', 'MVP, levée de fonds, produit à lancer.', '↗'], ['Agence', 'Renfort design + IA pour vos clients.', '◎'], ['Entreprise', 'Outil interne, données métier, équipe.', '▦']],
+    [['App IA', 'RAG, LLM, assistants, recherche intelligente.', '✳'], ['Modèle IA', 'Vision, classification, données métier.', '◆'], ['UI/UX', 'Recherche, maquettes, prototype, design system.', '▤'], ['Site / App web', 'De la maquette au produit en ligne.', '▣']],
+    [['[? Fourchette 1]', 'À définir par Caleb.', '€'], ['[? Fourchette 2]', 'À définir par Caleb.', '€'], ['[? Fourchette 3]', 'À définir par Caleb.', '€'], ['[? Fourchette 4]', 'À définir par Caleb.', '€'], ['Je ne sais pas encore', 'On en discute ensemble.', '?']],
+    [['Dès que possible', 'Le projet est prioritaire.', '⚡'], ['Sous 1 à 3 mois', 'Un calendrier serré mais réaliste.', '1–3'], ['Sous 3 à 6 mois', 'Le temps de bien faire.', '3–6'], ['Pas de date précise', 'On définit le planning ensemble.', '∞']],
+  ];
+  FIELD = ['type', 'needs', 'budget', 'delay'];
+
+  rm() { return matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  $(s) { return document.querySelector(s); }
+  $$(s) { return document.querySelectorAll(s); }
+  later(fn, ms) { this.timers = this.timers || []; const t = setTimeout(() => !this.dead && fn(), ms); this.timers.push(t); }
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: innerWidth }); this.onResize();
+    addEventListener('resize', this.onResize);
+    try { const b = new URLSearchParams(location.search).get('besoin'); const map = { 'app-ia': 'App IA', 'modele-ia': 'Modèle IA', 'ui-ux': 'UI/UX', 'web': 'Site / App web' }; if (b && map[b]) this.setState({ needs: [map[b]] }); } catch (e) {}
+    this.onKey = e => {
+      const tag = (e.target.tagName || '').toLowerCase();
+      if (this.state.step > 4) return;
+      if (e.key === 'Enter' && tag !== 'textarea' && tag !== 'button' && tag !== 'a') { e.preventDefault(); this.next(); return; }
+      if (tag === 'input' || tag === 'textarea' || this.state.step > 3) return;
+      const i = 'abcde'.indexOf(e.key.toLowerCase()); if (i >= 0 && i < this.O[this.state.step].length) this.pick(this.state.step, i);
+    };
+    addEventListener('keydown', this.onKey);
+    this.onClickA = e => {
+      const a = e.target.closest && e.target.closest('a[href]'); if (!a || a.target === '_blank') return;
+      const href = a.getAttribute('href');
+      if (href === '#') { e.preventDefault(); return; }
+      if (/^[^:#]+\.html/.test(href)) { e.preventDefault(); this.pageGo(a.dataset.page || 'Accueil', href); }
+    };
+    document.addEventListener('click', this.onClickA, true);
+    if (!this.rm()) {
+      this.$$('[data-breathe]').forEach(el => el.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.08)' }], { duration: 6000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }));
+      this.$$('[data-pulse]').forEach(el => el.animate([{ boxShadow: '0 0 0 0 rgba(198,255,61,0.7)' }, { boxShadow: '0 0 0 7px rgba(198,255,61,0)' }], { duration: 1800, iterations: Infinity }));
+    }
+    this._lastStep = 0;
+    const arrived = this.curtainArrive();
+    this.later(() => this.intro(), arrived ? 600 : 50);
+  }
+
+  componentWillUnmount() {
+    this.dead = true; (this.timers || []).forEach(clearTimeout);
+    removeEventListener('resize', this.onResize); removeEventListener('keydown', this.onKey);
+    document.removeEventListener('click', this.onClickA, true);
+  }
+
+  componentDidUpdate() {
+    if (this._lastStep === undefined) { this._lastStep = this.state.step; return; }
+    if (this._lastStep !== this.state.step) {
+      this._lastStep = this.state.step;
+      if (this.state.step === 5) requestAnimationFrame(() => this.celebrate());
+      else requestAnimationFrame(() => this.animQ(this.state.dir));
+    }
+  }
+
+  intro() {
+    if (this.rm()) return;
+    this.animQ(1, 150);
+    const rc = this.$('[data-recap]');
+    rc && rc.animate([{ opacity: 0, transform: 'translate(80px,40px) rotate(10deg)' }, { opacity: 1, transform: 'none' }], { duration: 1200, delay: 350, easing: 'cubic-bezier(0.34,1.3,0.64,1)', fill: 'backwards' });
+    this.$$('[data-rrow]').forEach((r, i) => r.animate([{ opacity: 0, transform: 'translateX(20px)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 700 + i * 70, easing: this.E, fill: 'backwards' }));
+    const bar = this.$('[data-bar]'); bar && bar.animate([{ opacity: 0, transform: 'translateY(80px)' }, { opacity: 1, transform: 'none' }], { duration: 900, delay: 500, easing: this.E, fill: 'backwards' });
+    const halo = this.$('[data-halo]'); halo && halo.animate([{ opacity: 0, transform: 'translateY(20%)' }, { opacity: 1, transform: 'none' }], { duration: 1400, easing: this.E, fill: 'backwards' });
+  }
+
+  animQ(dir, base = 0) {
+    if (this.rm()) return;
+    const t = this.$('[data-qt]');
+    t && t.animate([{ transform: `translateY(${dir > 0 ? 110 : -110}%) skewY(${dir * 4}deg)` }, { transform: 'none' }], { duration: 900, delay: base, easing: this.E, fill: 'backwards' });
+    this.$$('[data-qin]').forEach((el, i) => el.animate([{ opacity: 0, transform: `translateY(${dir * 24}px)` }, { opacity: 1, transform: 'none' }], { duration: 800, delay: base + 80 + i * 60, easing: this.E, fill: 'backwards' }));
+    this.$$('[data-opt]').forEach((el, i) => el.animate([{ opacity: 0, transform: `translateY(${dir * 40}px) scale(0.96)` }, { opacity: 1, transform: 'none' }], { duration: 850, delay: base + 180 + i * 70, easing: 'cubic-bezier(0.34,1.3,0.64,1)', fill: 'backwards' }));
+  }
+
+  flashRow(i) {
+    const r = this.$(`[data-rrow="${i}"]`); if (!r || this.rm()) return;
+    r.animate([{ transform: 'translateX(0)', boxShadow: '0 0 0 0 rgba(198,255,61,0)' }, { transform: 'translateX(-6px)', boxShadow: '0 0 0 3px rgba(198,255,61,0.9)', offset: 0.3 }, { transform: 'translateX(0)', boxShadow: '0 0 0 0 rgba(198,255,61,0)' }], { duration: 700, easing: this.E });
+  }
+
+  pick(step, i) {
+    const label = this.O[step][i][0];
+    if (step === 1) {
+      this.setState(s => ({ needs: s.needs.includes(label) ? s.needs.filter(x => x !== label) : [...s.needs, label] }));
+      this.flashRow(1);
+    } else {
+      this.setState({ [this.FIELD[step]]: label });
+      this.flashRow(step);
+      this.later(() => { if (this.state.step === step) this.next(); }, this.rm() ? 0 : 420);
+    }
+  }
+
+  valid(step = this.state.step) {
+    const s = this.state;
+    return step === 0 ? !!s.type : step === 1 ? s.needs.length > 0 : step === 2 ? !!s.budget : step === 3 ? !!s.delay
+      : step === 4 ? s.desc.trim().length >= 10 && s.name.trim().length > 1 && /^\S+@\S+\.\S{2,}$/.test(s.email.trim()) : true;
+  }
+
+  next = () => {
+    const { step } = this.state;
+    if (step > 4) return;
+    if (!this.valid()) {
+      this.setState({ tried: true });
+      const b = this.$('[data-next]'); b && !this.rm() && b.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-8px)' }, { transform: 'translateX(8px)' }, { transform: 'translateX(-5px)' }, { transform: 'translateX(0)' }], { duration: 420 });
+      return;
+    }
+    this.setState({ step: step + 1, dir: 1, tried: false });
+  };
+  back = () => { if (this.state.step > 0 && this.state.step < 5) this.setState(s => ({ step: s.step - 1, dir: -1, tried: false })); };
+
+  celebrate() {
+    const rm = this.rm();
+    const from = [[-420, -220, -30], [420, -200, 28], [-400, 220, 24], [400, 230, -22]], to = [[-40, -30, -9], [60, -40, 8], [-70, 30, 6], [30, 50, -4]];
+    this.$$('[data-dcard]').forEach((c, i) => {
+      const [fx, fy, fr] = from[i], [tx, ty, tr] = to[i];
+      if (rm) { c.style.transform = `translate(${tx}px,${ty}px) rotate(${tr}deg)`; return; }
+      c.animate([{ transform: `translate(${fx}px,${fy}px) rotate(${fr}deg) scale(0.6)`, opacity: 0 }, { transform: `translate(${tx}px,${ty}px) rotate(${tr}deg) scale(1)`, opacity: 1 }], { duration: 1100, delay: i * 110, easing: 'cubic-bezier(0.34,1.4,0.64,1)', fill: 'both' });
+    });
+    this.$$('[data-check]').forEach((p, i) => {
+      if (rm) { p.style.strokeDashoffset = 0; return; }
+      p.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 750, delay: 1050 + i * 60, easing: 'cubic-bezier(0.65,0,0.35,1)', fill: 'forwards' });
+    });
+    if (!rm) this.$$('[data-spark]').forEach((s, i) => {
+      const a = (i / 10) * Math.PI * 2, d = 150 + (i % 3) * 50;
+      s.animate([{ transform: 'translate(-50%,-50%) scale(1)', opacity: 1 }, { transform: `translate(calc(-50% + ${Math.cos(a) * d}px), calc(-50% + ${Math.sin(a) * d * 0.7}px)) rotate(${i * 50}deg) scale(0.3)`, opacity: 0 }], { duration: 1000, delay: 1500, easing: this.E });
+    });
+    const t = this.$('[data-dt]');
+    t && !rm && t.animate([{ transform: 'translateY(130%) skewY(5deg)' }, { transform: 'none' }], { duration: 1000, delay: 1250, easing: this.E, fill: 'backwards' });
+    if (!rm) this.$$('[data-din]').forEach((el, i) => el.animate([{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: el.style.transform || 'none' }], { duration: 800, delay: 1500 + i * 100, easing: this.E, fill: 'backwards' }));
+  }
+
+  curtainArrive() {
+    let label = null;
+    try { label = sessionStorage.getItem('cdd-curtain'); sessionStorage.removeItem('cdd-curtain'); } catch (e) {}
+    const wrap = this.$('[data-curtain]');
+    if (!label || !wrap || this.rm()) return false;
+    const ps = [...wrap.querySelectorAll('[data-curtain-p]')], lab = wrap.querySelector('[data-curtain-l]'), io = 'cubic-bezier(0.76,0,0.24,1)';
+    lab.textContent = label; wrap.style.display = 'block';
+    ps.forEach(p => p.style.transform = 'translateY(0)'); lab.style.transform = 'none';
+    this.later(() => {
+      lab.animate([{ transform: 'none' }, { transform: 'translateY(-110%)' }], { duration: 450, easing: io, fill: 'forwards' });
+      ps.slice().reverse().forEach((p, i) => p.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }], { duration: 750, delay: 150 + i * 90, easing: io, fill: 'forwards' }));
+      this.later(() => { wrap.style.display = 'none'; ps.forEach(p => { p.getAnimations().forEach(a => a.cancel()); p.style.transform = 'translateY(100%)'; }); lab.getAnimations().forEach(a => a.cancel()); lab.style.transform = 'translateY(110%)'; }, 1200);
+    }, 250);
+    return true;
+  }
+
+  pageGo(label, href) {
+    const wrap = this.$('[data-curtain]');
+    if (!wrap || this.rm()) { location.href = href; return; }
+    if (this.busy) return; this.busy = true;
+    const ps = [...wrap.querySelectorAll('[data-curtain-p]')], lab = wrap.querySelector('[data-curtain-l]'), io = 'cubic-bezier(0.76,0,0.24,1)';
+    lab.textContent = label; wrap.style.display = 'block';
+    ps.forEach((p, i) => p.animate([{ transform: 'translateY(100%)' }, { transform: 'translateY(0)' }], { duration: 650, delay: i * 90, easing: io, fill: 'forwards' }));
+    lab.animate([{ transform: 'translateY(110%)' }, { transform: 'none' }], { duration: 650, delay: 420, easing: this.E, fill: 'forwards' });
+    this.later(() => { try { sessionStorage.setItem('cdd-curtain', label); } catch (e) {} location.href = href; }, 1100);
+  }
+
+  renderVals() {
+    const s = this.state, w = s.w, mobile = w < 900, step = Math.min(4, s.step), done = s.step === 5;
+    const q = { ...this.Q[step], num: '0' + (step + 1), role: step === 1 ? 'group' : 'radiogroup' };
+    const vals = [s.type, s.needs, s.budget, s.delay];
+    const opts = step < 4 ? this.O[step].map(([label, desc, glyph], i) => {
+      const sel = step === 1 ? s.needs.includes(label) : vals[step] === label;
+      return { label, desc, glyph, key: 'ABCDE'[i], role: step === 1 ? 'checkbox' : 'radio', aria: sel ? 'true' : 'false',
+        bg: sel ? '#0B0B0F' : 'rgba(255,255,255,0.8)', ink: sel ? '#FFFFFF' : '#0B0B0F', sub: sel ? '#D4D4D8' : '#52525B',
+        bd: sel ? '#0B0B0F' : 'rgba(255,255,255,1)', sh: sel ? '0 20px 40px -18px rgba(11,11,15,0.6)' : '0 14px 30px -22px rgba(47,107,255,0.5)',
+        tf: sel ? 'translateY(-3px)' : 'none', grad: this.G[i % 5], gink: i === 3 ? '#0B0B0F' : '#FFFFFF',
+        kbg: sel ? '#C6FF3D' : 'transparent', kink: sel ? '#0B0B0F' : (sel ? '#FFFFFF' : '#52525B'), kbd: sel ? '#C6FF3D' : 'rgba(11,11,15,0.15)',
+        pick: () => this.pick(step, i) };
+    }) : [];
+    const emailOk = /^\S+@\S+\.\S{2,}$/.test(s.email.trim()), bad = c => s.tried && !c ? '#FF5A36' : 'rgba(255,255,255,1)';
+    const rows = [['PROFIL', s.type], ['BESOIN', s.needs.join(' · ')], ['BUDGET', s.budget], ['DÉLAI', s.delay], ['CONTACT', s.name.trim() ? s.name.trim() + (emailOk ? ' · ' + s.email.trim() : '') : '']];
+    const filled = rows.filter(r => r[1]).length;
+    const ok = this.valid();
+    const ndviCol = v => `hsl(${Math.round(v * 120)} 75% 48%)`;
+    return {
+      cols: w < 1100 || done ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(300px,400px)',
+      wideInline: w >= 1000 ? 'inline' : 'none', wideBlock: w >= 1000 ? 'block' : 'none',
+      notDone: !done, isDone: done, showRecap: !done && w >= 1100,
+      q, isChoice: step < 4, isForm: step === 4, opts,
+      optCols: step === 2 || w < 700 || (w >= 1100 && w < 1280) ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))',
+      formCols: w < 640 ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))',
+      ans: { desc: s.desc, name: s.name, email: s.email },
+      onDesc: e => this.setState({ desc: e.target.value }), onName: e => this.setState({ name: e.target.value }), onEmail: e => this.setState({ email: e.target.value }),
+      descBd: bad(s.desc.trim().length >= 10), nameBd: bad(s.name.trim().length > 1), emailBd: bad(emailOk),
+      formHint: s.tried && !ok ? 'MERCI DE REMPLIR LES CHAMPS EN ORANGE (DESCRIPTION : 10 CARACTÈRES MINIMUM)' : '* CHAMPS REQUIS · VOS DONNÉES RESTENT CONFIDENTIELLES',
+      formHintC: s.tried && !ok ? '#C2410C' : '#52525B',
+      recap: rows.map(([label, val], i) => ({ i, label, val: val || '—', ink: val ? '#0B0B0F' : '#A1A1AA', bg: i === step && !done ? 'rgba(198,255,61,0.18)' : 'transparent',
+        icon: val ? '✓' : '', dotBg: val ? '#C6FF3D' : 'transparent', dotBd: val ? '0' : '1.5px dashed rgba(11,11,15,0.25)' })),
+      filledL: filled + ' / 5',
+      stepN: String(Math.min(5, s.step)), progW: ((Math.min(5, s.step) + (ok && s.step < 5 ? 0.5 : 0)) / 5 * 100) + '%',
+      backOp: s.step > 0 ? 1 : 0.35, backPE: s.step > 0 ? 'auto' : 'none',
+      nextL: step === 4 ? 'Envoyer la demande' : 'Continuer',
+      nextBg: ok ? '#0B0B0F' : 'rgba(11,11,15,0.12)', nextInk: ok ? '#FFFFFF' : '#52525B', nextDot: ok ? '#C6FF3D' : '#FFFFFF',
+      next: this.next, back: this.back,
+      firstName: (s.name.trim().split(' ')[0]) || '',
+      miniNdvi: Array.from({ length: 24 }, (_, i) => ndviCol(Math.max(0, Math.min(1, 0.55 + 0.35 * Math.sin(i * 0.9) + ((i * 37) % 10) / 40 - (i === 9 ? 0.6 : 0))))),
+    };
+  }
+}
+</script>
+</body>
+</html>
